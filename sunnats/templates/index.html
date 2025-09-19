@@ -1,0 +1,11 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block styles %}
+<link rel="stylesheet" href="{% static 'css/indexStyle.css' %}">
+{% endblock styles %}
+
+{% block content %}
+    {% include 'includes/index/categories.html' with categories=categories %}
+{% endblock content %}

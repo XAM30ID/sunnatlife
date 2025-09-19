@@ -1,0 +1,37 @@
+.about {
+    min-height: 75vh;
+    background-color: rgba(0, 0, 0, 0.6);
+    padding-top: 20px;
+}
+
+.text-block {
+    text-align:justify;
+    font-family: 'Montserrat-Regular';
+    color: white;
+    line-height: 150%;
+    text-indent: 5%;
+}
+
+.main-aim {
+    text-align: center;
+    text-indent: 0;
+}
+
+.about-delimeter {
+    height: 2px;
+    border-radius: 100px;
+    width: 100%;
+    background-color: rgba(112, 112, 112, 0.368);
+    margin: 20px 0;
+}
+
+.sources__title {
+    margin-bottom: 10px;
+}
+
+
+.sources__source {
+    margin-left: 15%;
+    list-style-type: disc;
+    text-indent: 0;
+}

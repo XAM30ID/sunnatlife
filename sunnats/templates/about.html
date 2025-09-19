@@ -1,0 +1,38 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block styles %}
+<link rel="stylesheet" href="{% static 'css/aboutStyle.css' %}">
+{% endblock styles %}
+
+{% block content %}
+    <section class="about default-section-wrapper">
+        <div class="main-aim text-block">
+            SunnatLife – это духовно-образовательный проект, посвященный изучению и распространению Сунны Пророка Мухаммада (мир ему и благословение Аллаха). Наша миссия – донести достоверные знания о наследии Пророка до максимально широкой аудитории.
+        </div>
+
+        <div class="about-delimeter"></div>
+
+        <div class="text-block">
+            <p>
+                Наш проект существует благодаря усилиям волонтеров и поддержке мусульманской общины. Мы не размещаем рекламу и стремимся сохранять независимость контента.
+            </p>
+            <br>
+            <p>
+                Если вы хотите поддержать проект, вы можете просто прочитать Дуа или же помочь в распространении.
+            </p>
+        </div>
+        
+        <div class="about-delimeter"></div>
+
+        <div class="sources text-block">
+            <div class="sources__title">Источники:</div>
+            <ul>
+                <li class="sources__source">
+                    "Суннаты нашего Пророка" - Имам Тирмизи
+                </li>
+            </ul>
+        </div>
+    </section>
+{% endblock content %}

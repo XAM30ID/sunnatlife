@@ -1,0 +1,11 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block styles %}
+<link rel="stylesheet" href="{% static 'css/biograohiesStyle.css' %}">
+{% endblock styles %}
+
+{% block content %}
+    {% include 'includes/biographies/biography_cards.html' with biographies=biographies %}
+{% endblock content %}

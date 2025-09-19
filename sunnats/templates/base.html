@@ -1,0 +1,23 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="{% static 'images/favicon.png' %}" type="image/x-icon">
+    <link rel="shortcut icon" href="{% static 'images/favicon.png' %}" type="image/x-icon">
+    <title>{% block title %}🕋 Sunnatlife 🕋{% endblock title %}</title>
+    <link rel="stylesheet" href="{% static 'css/baseStyle.css' %}">
+    {% block styles %}{% endblock styles %}
+</head>
+<body>
+    <div class="main-background"></div>
+
+    {% include 'includes/header.html' %}
+    {% block content %}
+    {% endblock content %}
+    {% include 'includes/footer.html' %}
+</body>
+    <script src="{% static 'js/baseScript.js' %}"></script>
+    {% block scripts %}{% endblock scripts %}
+</html>

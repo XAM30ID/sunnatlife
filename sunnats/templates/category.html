@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block styles %}
+<link rel="stylesheet" href="{% static 'css/categoryStyle.css' %}">
+{% endblock styles %}
+
+{% block content %}
+    <section class="category default-section-wrapper">
+        <div class="category__info">
+            <img src="{{ category.image.url }}" alt="{{ category.title }}" class="category__image">
+            <h1 class="category__title">{{ category.title }}</h1>
+            <div class="category__description">{{ category.description }}</div>
+            <div class="category__subinfo">
+                <div class="category__subtitle">
+                    {{ category.get_sunnats_count }}
+                </div>
+                <div class="category__subtext">
+                    Сунн
+                </div>
+            </div>
+        </div>
+        {% include 'includes/category/sunnats.html' with category=category %}
+    </section>
+{% endblock content %}

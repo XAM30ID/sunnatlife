@@ -1,0 +1,26 @@
+{% load static %}
+<header class="main-header header default-section-wrapper">
+    <nav class="header__nav">
+        <button type="button" class="header__nav-btn" id="header__nab-btn">
+            <div class="header__nav-btn__icon">
+                <div class="header__nav-btn__line"></div>
+                <div class="header__nav-btn__line"></div>
+                <div class="header__nav-btn__line"></div>
+            </div>
+        </button>
+        <img src="{% static 'images/main_logo.png' %}" alt="SunnatLife" class="header__logo">
+        <ul class="header__nav-items" id="header__nav-items">
+                <li class="header__nav-item {% if 'index' in request.resolver_match.url_name %}header__nav-item_selected{% endif %}">
+                    <a href="/">Cунны</a>
+                </li>
+                
+                <li class="header__nav-item {% if 'biographies' in request.resolver_match.url_name %}header__nav-item_selected{% endif %}">
+                    <a href="/biographies">Биографии</a>
+                </li>
+                
+                <li class="header__nav-item {% if 'about' in request.resolver_match.url_name %}header__nav-item_selected{% endif %}">
+                    <a href="/about">О нас</a>
+                </li>
+        </ul>
+    </nav>
+</header>

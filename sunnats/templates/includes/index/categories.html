@@ -1,0 +1,20 @@
+{% load static %}
+
+<section class="categories default-section-wrapper">
+    {% if categories.count == 0 %}
+    <h3 class="empty-title">
+        Здесь пока ничего нет, ждём Вас позже)
+    </h3>
+    {% else %}
+        <h3 class="categories-title default-title">Категории</h3>
+        <div class="categories-container">
+            {% for category in categories %}
+                <a href="{% url 'sunnats:category' slug=category.slug %}" class="category">
+                    <img class="category__image" src="{{ category.image.url }}" alt="{{ category.image.url }}">
+                    <h4 class="category__title">{{ category.title }}</h4>
+                    <div class="category__subtitle">{{ category.get_sunnats_count }} сунн</div>
+                </a>
+            {% endfor %}
+        </div>
+    {% endif %}
+</section>

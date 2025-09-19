@@ -1,0 +1,46 @@
+{% load static %}
+
+<section class="biographies default-section-wrapper">
+    {% if categories.count == 0 %}
+    <h3 class="empty-title">
+        Здесь пока ничего нет, ждём Вас позже)
+    </h3>
+    {% else %}
+        <h3 class="biographies-title default-title">Биографии</h3>
+        
+        <div class="persons">
+            {% for person in biographies %}
+            <div class="person more-block">
+                <div>
+                    <div class="person__name name">
+                        <h4 class="name">{{ person.get_name_with_respect.ru }}</h4>
+                        <h4 class="name-ar">{{ person.get_name_with_respect.ar }}</h4>
+                    </div>
+
+                    {% if not person.birth_year is None or not person.death_year is None %}
+                        <div class="person__dates">
+                            <div class="person__date">{{ person.birth_year }}</div>−
+                            <div class="person__date">{{ person.death_year }}</div>
+                        </div>
+                    {% endif %}
+
+                    <div class="person__biography">
+                        {{ person.biography|linebreaks|linebreaksbr|safe }}
+                    </div>
+                </div>
+                
+                <button type="button" class="more-button" id="more-button">
+                    <div class="more-button-line"></div>
+                    <div class="more-button-line"></div>
+                </button>
+            </div>
+            {% endfor %}
+        </div>
+    {% endif %}
+</section>
+
+
+
+{% block scripts %}
+<script src="{% static 'js/moreButtonScripts.js' %}"></script>
+{% endblock scripts %}

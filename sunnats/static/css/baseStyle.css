@@ -1,0 +1,300 @@
+html,body,div,span,applet,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,a,abbr,acronym,address,big,cite,code,del,dfn,em,img,ins,kbd,q,s,samp,small,strike,strong,sub,sup,tt,var,b,u,i,center,dl,dt,dd,ol,ul,li,fieldset,form,label,legend,table,caption,tbody,tfoot,thead,tr,th,td,article,aside,canvas,details,embed,figure,figcaption,footer,header,hgroup,menu,nav,output,ruby,section,summary,time,mark,audio,video{margin:0;padding:0;border:0;font-size:100%;font:inherit;vertical-align:baseline}
+article,aside,details,figcaption,figure,footer,header,hgroup,menu,nav,section{display:block}
+html{height:100%}
+body{line-height:1}
+ol,ul{list-style:none}
+blockquote,q{quotes:none}
+blockquote:before,blockquote:after,q:before,q:after{content:'';content:none}
+table{border-collapse:collapse;border-spacing:0}
+
+/* ▼ ПОДКЛЮЧЕНИЕ ШРИФТОВ ▼ */
+@font-face {
+    font-family: 'Montserrat-Regular';
+    src: url('../fonts/Montserrat-Regular.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: 'Montserrat-SemiBold';
+    src: url('../fonts/Montserrat-SemiBold.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: 'Montserrat-Black';
+    src: url('../fonts/Montserrat-Black.ttf') format('truetype');
+}
+
+
+/* ▼ ГЛОБАЛЬНЫЕ ПЕРЕМЕННЫЕ ▼ */
+:root {
+    --default-font-size: 18px
+}
+
+html {
+  scrollbar-width: thin;
+  /* scrollbar-color: rgba(195, 195, 195, 0.049) rgb(37, 37, 37) rgb(255, 0, 0); */
+}
+
+/* ▼ ОБЩИЕ СТИЛИ ▼ */
+body {
+    background-color: gray;
+    box-sizing: border-box;
+    font-family: 'Montserrat-SemiBold';
+}
+
+.main-background {
+    position: absolute;
+    position: fixed;
+    z-index: -1;
+    background-image: url('../images/background.webp');
+    background-size: cover;
+    background-position: center top;
+    width: 100vw;
+    height: 100vh;
+    filter: blur(5px) brightness(50%);
+}
+
+.default-section-wrapper {
+    padding: 0 5vw;
+    box-sizing: border-box;
+    margin-bottom: 2%;
+}
+
+.default-title {
+    color: white;
+    text-align: center;
+    font-size: 24px;
+    line-height: 130%;
+    font-family: 'Montserrat-SemiBold';
+}
+
+.empty-title {
+    font-family: 'Montserrat-SemiBold';
+    font-size: 24px;
+    color: white;
+    line-height: 130%;
+    text-align: center;
+}
+
+
+/* ▼ ХЕДЕР ▼ */
+.main-header {
+    box-sizing: border-box;
+    position: relative;
+    padding-top: 3vh;
+    padding-bottom: 3vh;
+}
+
+.header__nav {
+    display: flex;
+    justify-content: space-between;
+    box-sizing: border-box;
+}
+
+.header__nav-btn {
+    background-color: transparent;
+    border: none;
+    width: 10vw;
+    transition: ease .1s;
+}
+
+.header__nav-btn:active {
+    scale: .8;
+}
+
+.header__nav-btn__icon {
+    display: flex;
+    flex-direction: column;
+    gap: 7px;
+    pointer-events: none;
+}
+
+.header__nav-btn__line {
+    height: 4px;
+    width: 100%;
+    background-color: white;
+    border-radius: 100px;
+}
+
+.header__logo {
+    position: absolute;
+    margin: auto;
+    top: 0; left: 0; bottom: 0; right: 0;
+    width: 50%;
+    aspect-ratio: 16/2.3;
+}
+
+.header__nav-items {
+    display: flex;
+    flex-direction: column;
+    background-color: rgba(0, 0, 0, .7);
+    position: absolute;
+    width: 50vw;
+    height: 100vh;
+    align-items: end;
+    padding: 10%;
+    box-sizing: border-box;
+    backdrop-filter: blur(5px);
+    left: -55vw;
+    top: 0;
+    transition: ease .2s;
+}
+
+.header__nav-items_active {
+    left: -5vw;
+}
+
+.header__nav-item {
+    margin-bottom: 20%;
+    transition: .2s ease;
+}
+
+.header__nav-item:active {
+    scale: .9;
+}
+
+.header__nav-item a {
+    color: white;
+    font-family: 'Montserrat-Regular';
+    font-size: 18px;
+    text-decoration: none;
+}
+
+.header__nav-item_selected a {
+    font-family: 'Montserrat-SemiBold';
+    text-decoration: underline;
+}
+
+
+
+
+.more-button {
+    width: 100%;
+    background: none;
+    border: none;
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+    align-items: center;
+    height: 20px;
+    transition-duration: .5s;
+}
+
+.more-button:hover {
+    cursor: pointer;
+}
+
+.more-button-line {
+    rotate: 30deg;
+    height: 3px;
+    border-radius: 100px;
+    width: 15px;
+    background-color: white;
+    margin-right: -2px;
+}
+
+.more-button-line:last-child {
+    rotate: -30deg;
+    margin-right: 0;
+    margin-left: -2px;
+}
+
+
+.more-block_enabled .more-button {
+    transform: rotate(180deg);
+}
+
+
+.main-footer {
+    display: flex;
+    align-items: center;
+    padding-top: 5%;
+    padding-bottom: 5%;
+    justify-content: center;
+}
+
+.footer__social {
+    display: none;
+}
+
+.footer__duaa {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    text-align: center;
+    color: rgba(153, 153, 153, 0.7);
+}
+
+.duaa_ar {
+    font-size: 18px;
+}
+
+.footer__charity {
+    display: none;
+}
+
+
+/* ▼ СТИЛИ ДЛЯ ПК ▼ */
+@media (min-width: 990px) {
+    .header__nav-btn {
+        display: none;
+    }
+
+    .default-section-wrapper {
+        margin-bottom: 0;
+    }
+    
+    .header__logo {
+        position: relative;
+        margin: 0;
+        width: 15%;
+    }
+    
+    .header__nav {
+        justify-content: left;
+        position: relative;
+    }
+
+    .header__nav-items {
+        flex-direction: row;
+        background-color: transparent;
+        width: 50%;
+        justify-content: space-between;
+        height: fit-content;
+        align-items: center;
+        position: absolute;
+        left: 0; right: 0; top: 0; bottom: 0;
+        margin: auto;
+        backdrop-filter: none;
+        padding: 0;
+    }
+    
+    .header__nav-item {
+        margin: 0;
+    }
+
+    .header__nav-item a {
+        color: white;
+        font-family: 'Montserrat-Regular';
+        font-size: 18px;
+        text-decoration: none;
+    }
+
+    .header__nav-item_selected a {
+        font-family: 'Montserrat-SemiBold';
+        text-decoration: underline;
+    }
+
+    .main-footer {
+        padding-top: 3%;
+        padding-bottom: 2%;
+    }
+    
+    .footer__duaa {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        text-align: center;
+        color: rgba(180, 180, 180, 0.7);
+    }
+
+}

@@ -1,0 +1,164 @@
+.category {
+    background-color: rgba(0, 0, 0, .7);
+    padding-top: 5%;
+    padding-bottom: 5%;
+    min-height: 80vh;
+}
+
+.category__info {
+    text-align: center;
+    color: white;
+}
+
+.category__info::after, .category__info::before {
+    display: block;
+    background-color: white;
+    opacity: 80%;
+    height: 3px;
+    width: 100%;
+    content: '';
+    margin-top: 10%;
+    border-radius: 100px;
+}
+
+.category__info::before {
+    margin-top: 0;
+    margin-bottom: 10%;
+}
+
+.category__image {
+    width: 30%;
+}
+
+.category__title {
+    font-size: 24px;
+    margin-top: 20px;
+}
+
+.category__subinfo {
+    margin-top: 20px;
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: center;
+    gap: 10px;
+    color: rgb(175, 175, 175);
+    font-size: 16px;
+}
+
+
+.sunnats {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    margin-top: 10%;
+}
+
+.sunnat {
+    color: white;
+    border: 2px white solid;
+    border-left-width: 10px;
+    padding: 5%;
+    border-radius: 10px;
+}
+
+.sunnat_info {
+    display: flex;
+    flex-direction: column;
+    gap: 5%;
+}
+
+.sunnat__title {
+    font-size: 18px;
+    text-align: center;
+}
+
+.sunnat__hadithes {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    transition-duration: .7s;
+    max-height: 0;
+    overflow-y: hidden;
+}
+
+.more-block_enabled .sunnat__hadithes {
+    max-height: 100vh;
+    overflow-y: hidden;
+    margin-top: 5%;
+    margin-bottom: 20px;
+}
+
+.hadith {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    font-family: 'Montserrat-Regular';
+}
+
+.hadith::after {
+    content: '';
+    height: 2px;
+    background-color: rgb(100, 100, 100);
+    width: 90%;
+    align-self: center;
+    margin-top: 10px;
+}
+
+.hadith:last-child::after {
+    display: none;
+}
+
+.hadith__text-ar {
+    text-align: right;
+    line-height: 150%;
+}
+
+.hadith__sender {
+    margin-top: 5px;
+    color:rgb(175, 175, 175);
+}
+
+
+@media (min-width: 990px) {
+    .category__image {
+        width: 7vw;
+    }
+    
+    .category__info::after, .category__info::before {
+        margin-top: 3%;
+    }
+
+    .category__info::before {
+        margin-top: 0;
+        margin-bottom: 3%;
+    }
+
+    .category {
+        padding-top: 2%;
+        padding-bottom: 5%;
+    }
+
+    .sunnats {
+        margin-top: 3%;
+        gap: 30px;
+    }
+
+    .sunnat {
+        padding: 2%;
+    }
+
+    .sunnat__hadithes {
+        margin-top: 3%;
+        gap: 50px;
+    }
+
+    .hadith {
+        gap: 20px;
+        font-size: 18px;
+    }
+
+    .more-button {
+        margin-top: 0;
+    }
+
+}

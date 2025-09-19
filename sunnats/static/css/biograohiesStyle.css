@@ -1,0 +1,71 @@
+.persons {
+    margin-top: 20px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    min-height: 70vh;
+}
+
+.person {
+    color: white;
+    border: 2px white solid;
+    border-left-width: 10px;
+    padding: 5%;
+    height: fit-content;
+    border-radius: 10px;
+    background-color: rgba(0, 0, 0, .8);
+}
+
+.person__name {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    margin-bottom: 20px;
+}
+
+.name-ar {
+    text-align: right;
+    font-weight:bold;
+    color: rgb(150, 150, 150);
+}
+
+.person__dates {
+    font-family: 'Montserrat-Regular';
+    display: flex;
+    gap: 10px;
+    margin-bottom: 20px;
+    color: rgb(150, 150, 150);
+}
+
+.person__biography {
+    font-family: 'Montserrat-Regular';
+    display: block;
+    text-indent: 5%;
+    padding: 0;
+    max-height: 15vh;
+    overflow: hidden;
+    transition-duration: .7s;
+}
+
+.more-button {
+    transition-duration: .7s;
+}
+
+.more-block_enabled .person__biography {
+    max-height: 100vh;
+}
+
+@media (min-width: 990px) { 
+    .person {
+        width: 20%;
+        padding: 2%;
+        min-height: 40vh;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+    }
+        
+    .more-button {
+        margin-top: 10px;
+    }
+}

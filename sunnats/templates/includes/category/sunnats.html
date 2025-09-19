@@ -1,0 +1,38 @@
+{% load static %}
+
+<div class="sunnats">
+    {% for sunnat in category.get_sunnats %}
+    <div class="sunnat more-block">
+        <div class="sunnat_info">
+            <div class="sunnat__title">
+                {{ sunnat.title }}
+            </div>
+        </div>
+        
+        <div class="sunnat__hadithes">
+            {% for hadith in sunnat.get_hadithes %}
+            <div class="sunnat__hadith hadith">
+                <div class="hadith__text-ar">
+                    {{ hadith.text_ar }}
+                </div>
+                <div class="hadith__text">
+                    {{ hadith.text }}
+                </div>
+                <div class="hadith__sender">
+                    Передал: <span class="hadith__sender-name">{{ hadith.sender.name }}</span>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+
+        <button type="button" class="more-button" id="more-button">
+            <div class="more-button-line"></div>
+            <div class="more-button-line"></div>
+        </button>
+    </div>
+    {% endfor %}
+</div>
+
+{% block scripts %}
+<script src="{% static 'js/moreButtonScripts.js' %}"></script>
+{% endblock scripts %}
