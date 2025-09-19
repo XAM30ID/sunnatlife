@@ -28,9 +28,9 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-y!o9gh%s0=o5de_gw8_oa1^9fvao*05lwpcx2oym718ktxh2sz'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['sunnatlife.ru']
 
 # Настройки бота
 BOT_TOKEN = os.getenv('BOT_TOKEN')
